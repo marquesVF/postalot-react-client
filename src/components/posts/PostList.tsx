@@ -14,7 +14,8 @@ const useStyles = makeStyles({
     },
     title: {
         color: "#243327",
-        fontSize: 25,
+        fontSize: 24,
+        fontFamily: 'Rubik',
         textAlign: "left"
     },
     author: {
@@ -22,7 +23,8 @@ const useStyles = makeStyles({
         textAlign: "left"
     },
     content: {
-        fontSize: 18,
+        fontSize: 17,
+        fontFamily: 'Noto Sans TC',
         textAlign: "left"
     }
 })

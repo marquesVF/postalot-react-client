@@ -5,9 +5,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hoc';
+import WebFont from 'webfontloader'
 
 const apolloClient = new ApolloClient({
     uri: 'http://localhost:3000/graphql'
+})
+
+WebFont.load({
+    google: {
+        families: ['Rubik', 'Noto Sans TC', 'sans-serif']
+    }
 })
 
 ReactDOM.render(
