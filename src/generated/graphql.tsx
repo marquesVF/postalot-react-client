@@ -112,7 +112,7 @@ export type PostsQuery = (
   { __typename?: 'Query' }
   & { posts: Maybe<Array<(
     { __typename?: 'Post' }
-    & Pick<Post, 'title' | 'author'>
+    & Pick<Post, 'createdAt' | 'author' | 'title' | 'content'>
     & { comments: Maybe<Array<(
       { __typename?: 'Comment' }
       & Pick<Comment, 'author' | 'content'>
@@ -129,7 +129,7 @@ export type PostQuery = (
   { __typename?: 'Query' }
   & { post: (
     { __typename?: 'Post' }
-    & Pick<Post, 'title' | 'author'>
+    & Pick<Post, 'createdAt' | 'author' | 'title' | 'content'>
     & { comments: Maybe<Array<(
       { __typename?: 'Comment' }
       & Pick<Comment, 'author' | 'content'>
@@ -141,8 +141,10 @@ export type PostQuery = (
 export const PostsDocument = gql`
     query posts {
   posts {
-    title
+    createdAt
     author
+    title
+    content
     comments {
       author
       content
@@ -195,8 +197,10 @@ export type PostsQueryResult = ApolloReactCommon.QueryResult<PostsQuery, PostsQu
 export const PostDocument = gql`
     query post($id: ID!) {
   post(id: $id) {
-    title
+    createdAt
     author
+    title
+    content
     comments {
       author
       content
